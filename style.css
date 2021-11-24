@@ -1,0 +1,190 @@
+html{
+    /* This will help to ensure that adding padding will not effect final width */
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+/* This will inherit the above setup */
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    /* line Height suggestion */
+    line-height: 1.2;
+    font-family: 'Karla', sans-serif;
+    /* syntax for using a var */
+    color: var(--grayBlue);
+    background-color: var(--lightGray);
+    padding: var(--paddingX);
+    
+}
+
+/* CSS Variables ... Custom Properties  */
+:root{
+    --cyan: hsl(179, 62%, 43%);
+    --LTcyan: hsl(179, 62%, 55%);
+    --yellow: hsl(71, 80%, 54%);
+    /* This will be used for the hover */
+    --DRKyellow: hsl(71, 80%, 45%);
+    --lightGray: hsl(204, 43%, 93%);
+    --grayBlue: hsl(218, 22%, 67%);
+    --white: hsl(0, 0%, 100%);
+    --paddingX: 2.5rem;
+    --paddingY: 2.25rem;
+}
+
+
+h1, h2, h3{
+    margin-top:0;
+}
+
+.container{
+    /* CSS Grid View */
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* All div children of container will have this applied */
+.container > div{
+    padding: var(--paddingX) var(--paddingY);
+}
+
+/* ---------------------------
+--                          --
+-- CSS for Community DIV    --
+--                          --
+--------------------------- */
+
+.community{
+    flex: 100%;
+    background-color: var(--white);
+    border-radius: 10px 10px 0 0 ;
+}
+
+.community h2{
+    font-size: 1.75rem;
+    color: var(--cyan);
+    font-weight: bold;
+}
+
+.community h3{
+    font-size: 1.25rem;
+    color: var(--yellow);
+    font-weight: bold;
+}
+
+.community p{
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+/* ---------------------------
+--                          --
+-- CSS for Subscription DIV --
+--                          --
+--------------------------- */
+
+.sub{
+    flex: 50%;
+    background-color: var(--cyan);
+    border-radius: 0 0 0 10px;
+}
+
+.sub h2{
+    font-size: 1.25rem;
+    color: var(--lightGray);
+}
+
+.subprice{
+    color: var(--LTcyan);
+}
+
+.sub p{
+    color: var(--lightGray);
+}
+
+.signupBTN{
+    background-color: var(--yellow);
+    padding: 1rem;
+    border-radius: 5px;
+    padding-left: auto;
+    padding-right: auto;
+    text-align: center;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
+    display: block;
+}
+
+/* could do a CSS reset... */
+.signupBTN a{
+    text-decoration: none;
+    color: var(--white);
+    
+}
+
+.signupBTN:hover{
+    transition: 0.75s;
+    background-color: var(--DRKyellow);
+    
+}
+
+span{
+    font-size: 2rem;
+    color: var(--white)
+}
+
+/* ---------------------------
+--                          --
+-- CSS for Why Us DIV       --
+--                          --
+--------------------------- */
+
+.why{
+    flex: 50%;
+    background-color: var(--LTcyan);
+    border-radius: 0 0 10px 0;
+    color: var(--lightGray);
+}
+
+.why h2{
+    font-size: 1.25rem;
+    color: var(--lightGray);
+}
+
+ul{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li{
+    color: rgb(184, 220, 221);
+}
+
+footer{
+    font-size: 11px;
+    text-align: center;
+}
+
+/* Mobile View ... single column */
+@media(max-width:650px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        max-width: 375px;
+    }
+  
+    
+    .sub{
+        border-radius: 0 0 0 0;
+    }
+    
+    .why{
+        
+        border-radius: 0 0 10px 10px;
+    }
+}
+
